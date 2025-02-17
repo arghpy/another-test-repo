@@ -1,0 +1,25 @@
+name: "Test custom action"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+      - labeled
+      - unlabeled
+  pull_request_review:
+    types:
+      - submitted
+
+permissions: read-all
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Test action
+    uses: arghpy/get-pr-status@v1.0.0
