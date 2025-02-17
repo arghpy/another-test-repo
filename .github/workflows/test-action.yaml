@@ -22,4 +22,6 @@ concurrency:
 jobs:
   test:
     name: Test action
-    uses: arghpy/get-pr-status@v1.0.0
+    runs-on: ${{ vars.RUNNER }}
+    steps:
+      - uses: arghpy/get-pr-status@v1.0.0
