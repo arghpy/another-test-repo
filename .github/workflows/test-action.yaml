@@ -28,3 +28,8 @@ jobs:
     runs-on: ${{ vars.RUNNER }}
     steps:
       - uses: arghpy/get-pr-status@collect_info
+        id: get_pr_status
+
+      - name: Output branch
+        run: |
+          echo "Current branch: ${{ steps.get_pr_status.outputs.current_branch }}"
