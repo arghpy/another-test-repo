@@ -24,4 +24,4 @@ jobs:
     name: Test action
     runs-on: ${{ vars.RUNNER }}
     steps:
-      - uses: arghpy/get-pr-status@v1.0.0
+      - uses: arghpy/get-pr-status@collect_info
