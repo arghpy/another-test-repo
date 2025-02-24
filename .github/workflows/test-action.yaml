@@ -14,7 +14,7 @@ on:
       - submitted
   push:
     branches:
-      - master
+      - main
 
 permissions: read-all
 
